@@ -1,26 +1,27 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "heshamfouda/laravel-packages-manager",
+    "description": "This is my package laravel-packages-manager",
     "keywords": [
-        ":vendor_name",
+        "heshamfouda",
         "laravel",
-        ":package_slug"
+        "laravel-packages-manager"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/heshamfouda/laravel-packages-manager",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "HeshamFouda",
+            "email": "15731469+etchfoda@users.noreply.github.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
         "illuminate/contracts": "^8.37"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
         "nunomaduro/collision": "^5.3",
         "nunomaduro/larastan": "^1.0",
         "orchestra/testbench": "^6.15",
@@ -34,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Heshamfouda\\PackagesManager\\": "src",
+            "Heshamfouda\\PackagesManager\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Heshamfouda\\PackagesManager\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +55,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Heshamfouda\\PackagesManager\\PackagesManagerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "PackagesManager": "Heshamfouda\\PackagesManager\\PackagesManagerFacade"
             }
         }
     },
