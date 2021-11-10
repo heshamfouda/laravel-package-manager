@@ -2,9 +2,9 @@
 
 namespace Heshamfouda\PackagesManager\Tests;
 
+use Heshamfouda\PackagesManager\PackagesManagerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Heshamfouda\PackagesManager\PackagesManagerServiceProvider;
 
 class TestCase extends Orchestra
 {

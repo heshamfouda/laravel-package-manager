@@ -41,8 +41,9 @@ class SendEventDataToDebugBar
      */
     public function handle(ManagerEvent $event)
     {
-        if (!$this->debugBarLoaded())
+        if (! $this->debugBarLoaded()) {
             return;
+        }
 
         // todo: $event->envelop['data'] is not working here
         $this->collector->{$event->envelop['type']}($event->envelop['message']);

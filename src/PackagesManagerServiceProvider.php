@@ -4,9 +4,7 @@ namespace Heshamfouda\PackagesManager;
 
 use Barryvdh\Debugbar\LaravelDebugbar;
 use DebugBar\DataCollector\MessagesCollector;
-use Exception;
 use Heshamfouda\PackagesManager\Listeners\SendEventDataToDebugBar;
-use Illuminate\Support\Facades\App;
 use Spatie\LaravelPackageTools\Exceptions\InvalidPackage;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -33,8 +31,9 @@ class PackagesManagerServiceProvider extends PackageServiceProvider
     {
         parent::register();
 
-        if ($this->debugBarLoaded())
+        if ($this->debugBarLoaded()) {
             $this->registerDebugBarEventProvider();
+        }
     }
 
     private function debugBarLoaded()

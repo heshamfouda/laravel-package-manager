@@ -42,7 +42,6 @@ trait PackageLoaderInterface
      */
     abstract public function shortName(): string;
 
-
     /**
      * Get package's Slug
      * @return string

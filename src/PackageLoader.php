@@ -14,22 +14,28 @@ abstract class PackageLoader
         $options = [];
 
         $RouteNameSlug = $this->routeName() ?? '';
-        if (isset($this->mainRouteNameSlug) && !empty($this->mainRouteNameSlug))
+        if (isset($this->mainRouteNameSlug) && ! empty($this->mainRouteNameSlug)) {
             $RouteNameSlug = $this->mainRouteNameSlug . '.' . $RouteNameSlug;
-        if (isset($RouteNameSlug) && !empty($RouteNameSlug) && !str_ends_with($RouteNameSlug, '.'))
+        }
+        if (isset($RouteNameSlug) && ! empty($RouteNameSlug) && ! str_ends_with($RouteNameSlug, '.')) {
             $RouteNameSlug = "$RouteNameSlug.";
-        if (isset($RouteNameSlug) && !empty($RouteNameSlug))
+        }
+        if (isset($RouteNameSlug) && ! empty($RouteNameSlug)) {
             $options['as'] = $RouteNameSlug;
+        }
 
         $RoutePrefix = $this->routePrefix() ?? '';
-        if (isset($this->mainRoutePrefix) && !empty($this->mainRoutePrefix))
+        if (isset($this->mainRoutePrefix) && ! empty($this->mainRoutePrefix)) {
             $RoutePrefix = trim($this->mainRoutePrefix, '/') . '/' . trim($RoutePrefix, '/');
-        if (isset($RoutePrefix) && !empty($RoutePrefix))
+        }
+        if (isset($RoutePrefix) && ! empty($RoutePrefix)) {
             $options['prefix'] = trim($RoutePrefix, '/');
+        }
 
         $routeMiddleware = array_merge($this->mainRouteMiddleware ?? [], $this->routeMiddleware() ?? []);
-        if (count($routeMiddleware) > 0)
+        if (count($routeMiddleware) > 0) {
             $options['middleware'] = $routeMiddleware;
+        }
 
         Route::group($options, function () {
             $this->registerRouters();

@@ -12,7 +12,7 @@ class PackagesManager
     /**
      * Application system version
      */
-    const VERSION = '1.0.0';
+    public const VERSION = '1.0.0';
 
     /**
      * @var PackageLoader[] Loaded Packages
@@ -86,7 +86,7 @@ class PackagesManager
     public function getLoadedPackages(): array
     {
         return array_filter($this->packages, function ($package, $packageName) {
-            return !str_starts_with(get_class($package), 'Heshamfouda\\PackagesManager');
+            return ! str_starts_with(get_class($package), 'Heshamfouda\\PackagesManager');
         }, ARRAY_FILTER_USE_BOTH);
     }
 
@@ -109,8 +109,8 @@ class PackagesManager
     public function isPackageLoaded(string $packageName): bool
     {
         return array_search($packageName, array_map(function (PackageLoader $package) {
-                return get_class($package);
-            }, array_values($this->packages))) !== false;
+            return get_class($package);
+        }, array_values($this->packages))) !== false;
     }
 
     public function loadPreferences()
